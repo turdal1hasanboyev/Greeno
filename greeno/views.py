@@ -7,8 +7,8 @@ def home(request):
     query = request.GET.get('query')
     url = request.META.get('HTTP_REFERER')
 
-    plants = OurWonderfulPlants.objects.all().order_by('id')[:6]
-    gallery = Gallery.objects.all().order_by('-id')[:6]
+    plants = OurWonderfulPlants.objects.all()
+    gallery = Gallery.objects.all()
 
     if request.method == "POST":
         name = request.POST.get('name')
@@ -26,8 +26,8 @@ def home(request):
         return redirect(url)
     
     context = {
-        'plants': plants,
-        'gallery': gallery,
+        'plants': plants.order_by('id')[:6],
+        'gallery': gallery.order_by('-id')[:6],
     }
 
     return render(request, 'index.html', context)
