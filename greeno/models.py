@@ -17,14 +17,14 @@ class Contact(BaseModel):
     message = RichTextField(null=True, blank=True)
     phone = models.CharField(max_length=225, null=True, blank=True)
 
-    def __str__(self) -> str:
+    def __str__(self):
         return f"{self.id} - {self.name}"
     
 
 class Gallery(BaseModel):
     image = models.ImageField(upload_to='gallery', null=True, blank=True)
 
-    def __str__(self) -> str:
+    def __str__(self):
         return f"{self.id}"
     
 
@@ -33,6 +33,6 @@ class OurWonderfulPlants(BaseModel):
     description = RichTextField(null=True, blank=True)
     image = models.ImageField(upload_to='plants', null=True)
 
-    def __str__(self) -> str:
+    def __str__(self):
         return f"{self.id} - {self.name}"
     

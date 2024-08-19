@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 
-from greeno.models import OurWonderfulPlants, Contact, Gallery
+from .models import OurWonderfulPlants, Contact, Gallery
 
 
 def home(request):

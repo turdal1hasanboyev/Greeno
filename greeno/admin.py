@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from greeno.models import Gallery, OurWonderfulPlants, Contact
+from .models import Gallery, OurWonderfulPlants, Contact
 
 
 admin.site.register(Gallery)
